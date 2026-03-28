@@ -3,29 +3,22 @@ Quiz Game Application built with C#, Windows Forms, SQL Server, and ADO.NET feat
 
 # Quiz Game Application
 
-A desktop quiz game built with **C# Windows Forms**, **SQL Server**, and **ADO.NET**.  
-This project is designed as a beginner-friendly but presentation-ready college project with a polished UI, difficulty levels, timer-based gameplay, randomized questions, shuffled answers, score saving, and leaderboard support.
+A sample desktop quiz game project built with **C# Windows Forms**, **SQL Server**, and **ADO.NET**.
+
+This application allows users to log in, choose a quiz category and difficulty level, answer randomized questions, track scores, and view a leaderboard.
 
 ## Features
 
-- Login screen with user name saved to database
-- Category selection:
-  - Programming
-  - GK
-  - Aptitude
-- Difficulty levels:
-  - Easy
-  - Moderate
-  - Hard
-- 5 random questions loaded from SQL Server
-- Answer choices shuffled in C#
-- Timer with progress bar
-- Score tracking and result screen
-- Score saved in database
-- Leaderboard for top scores
-- Improved UI for college/project presentation
-- Expanded question bank to reduce repeated questions
-- Recent-question tracking to avoid showing the same questions too often on replay
+- User login
+- Category selection
+- Difficulty levels: Easy, Moderate, Hard
+- Random questions from SQL Server
+- Shuffled answer options
+- Timer for each question
+- Score calculation
+- Result screen
+- Leaderboard
+- Improved UI design
 
 ## Tech Stack
 
@@ -37,24 +30,24 @@ This project is designed as a beginner-friendly but presentation-ready college p
 ## Database Tables
 
 ### Users
-- `UserId`
-- `Name`
+- UserId
+- Name
 
 ### Questions
-- `QuestionId`
-- `QuestionText`
-- `OptionA`
-- `OptionB`
-- `OptionC`
-- `OptionD`
-- `CorrectAnswer`
-- `Category`
-- `Difficulty`
+- QuestionId
+- QuestionText
+- OptionA
+- OptionB
+- OptionC
+- OptionD
+- CorrectAnswer
+- Category
+- Difficulty
 
 ### Scores
-- `ScoreId`
-- `UserId`
-- `Score`
+- ScoreId
+- UserId
+- Score
 
 ## Project Structure
 
@@ -69,86 +62,29 @@ This project is designed as a beginner-friendly but presentation-ready college p
 - `Data/DatabaseHelper.cs`
 - `Database/QuizGameDb.sql`
 
-## How It Works
+## How to Run
 
-1. User enters name on the login screen
-2. User selects category and difficulty
-3. App loads 5 random questions from SQL Server
-4. Answer options are shuffled before display
-5. Timer runs for each question
-6. Final score is shown and saved
-7. Leaderboard displays top scores
-
-## Connection String
-
-The project uses the connection string from `DbConfig.cs`:
-
-```csharp
-Server=localhost;Database=QuizGameDb;Trusted_Connection=True;TrustServerCertificate=True;Encrypt=False;
-```
-
-Update this if your SQL Server instance name is different.
+1. Open the project in Visual Studio or use the .NET CLI
+2. Make sure SQL Server is installed and running
+3. Update the connection string in `DbConfig.cs` if needed
+4. Run the application
 
 ## Database Setup
 
-You can set up the database in either of these ways:
-
-### Option 1: Automatic setup
-The application creates the database structure and seeds questions automatically on startup if needed.
-
-### Option 2: Manual setup in SSMS
-Run:
+Run the SQL script:
 
 - `Database/QuizGameDb.sql`
 
-This script creates:
-- `QuizGameDb`
+This creates:
 - `Users`
 - `Questions`
 - `Scores`
 
-## How to Run the Project
+## Future Enhancements
 
-### Using PowerShell
-
-```powershell
-cd "C:\Users\shrad\Documents\New project\QuizGameApp"
-dotnet run
-```
-
-### Using Visual Studio
-
-1. Open Visual Studio
-2. Open `QuizGameApp.csproj`
-3. Build and run the project
-
-## Screenshots to Add on GitHub
-
-You can improve this README further by adding screenshots of:
-
-- Login screen
-- Category and difficulty screen
-- Quiz screen
-- Result screen
-- SSMS database tables
-
-Example:
-
-```md
-![Login Screen](screenshots/login.png)
-![Quiz Screen](screenshots/quiz.png)
-```
-
-## Future Improvements
-
-- Admin panel to add or manage questions
-- Sound effects and animations
-- User-wise score history
+- Admin panel for question management
 - More categories
-- Export results
-- Dark mode / theme switcher
-
-## Author
-
-Developed as a sample project using Windows Forms, SQL Server, and ADO.NET.
+- Score history
+- Sound effects
+- Better analytics
 
